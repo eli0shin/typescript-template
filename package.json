@@ -1,0 +1,33 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "build": "babel src --extensions .js,.ts,.tsx --out-dir build",
+    "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore .",
+    "types": "tsc --skipLibCheck --allowJs",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "validate": "npm run lint && npm run prettier -- --list-different && npm run types && npm run build && npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.7.4",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0"
+  }
+}
