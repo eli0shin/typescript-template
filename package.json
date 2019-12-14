@@ -6,11 +6,12 @@
   "scripts": {
     "test": "node test",
     "build": "babel src --extensions .js,.ts,.tsx --out-dir build",
-    "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "types": "tsc --skipLibCheck --allowJs",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "prettier": "prettier --ignore-path .eslintignore \"**/*.+(js|json|ts|tsx)\"",
+    "check-format": "npm run prettier -- --check",
     "format": "npm run prettier -- --write",
-    "validate": "npm run lint && npm run prettier -- --list-different && npm run types && npm run build && npm run test"
+    "validate": "npm-run-all lint prettier check-format types build && npm run test"
   },
   "author": "",
   "license": "ISC",
