@@ -7,6 +7,7 @@
     "test": "jest",
     "build": "babel src --extensions .js,.ts,.tsx --out-dir build",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint-staged": "lint-staged",
     "types": "tsc --skipLibCheck --allowJs",
     "prettier": "prettier --ignore-path .eslintignore \"**/*.+(js|json|ts|tsx)\"",
     "check-format": "npm run prettier -- --check",
